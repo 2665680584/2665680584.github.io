@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="Artificial Intelligence Based Amazon Consumer Sentiment and Behavior Analysis1.IntroductionOur project’s name is Artificial Intelligence Based Amazon ">
+        <meta name="description" content="Artificial Intelligence Based Amazon Consumer Sentiment and Behavior AnalysisChimingyang Huang1.IntroductionThe goal of this project is to use Artific">
     
 
     <!--Author-->
@@ -121,9 +121,9 @@
                     
 
                     <!-- Main Post Content -->
-                    <h2 id="Artificial-Intelligence-Based-Amazon-Consumer-Sentiment-and-Behavior-Analysis"><a href="#Artificial-Intelligence-Based-Amazon-Consumer-Sentiment-and-Behavior-Analysis" class="headerlink" title="Artificial Intelligence Based Amazon Consumer Sentiment and Behavior Analysis"></a><center>Artificial Intelligence Based Amazon Consumer Sentiment and Behavior Analysis</center></h2><h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1.Introduction"></a>1.Introduction</h3><p>Our project’s name is Artificial Intelligence Based Amazon Consumer Sentiment and Behavior Analysis. The goal is to use artificial intelligence to analyze the sentiment of Amazon Consumers by the comment they write. The project has very high practical value since the sellers can use the result to better understand their product.</p>
-<p>The method for this project is machine learning, and it is the most important type of Artificial Intelligence. The source of machine learning is data from the big data collected on internet. There are two types of machine: learning-supervised study and non-supervised study. The former means the data is labelled by human and the latter means the data is not labelled by human. In this project, we use supervised study because the rate system on amazon naturally provides a perfect label. Our research area is NLP, which mean natural language processing. This is the most significant problem in artificial language. The main goal is to let computer understand or interpret human language. </p>
-<h3 id="2-Dataset"><a href="#2-Dataset" class="headerlink" title="2.Dataset"></a>2.Dataset</h3><p>We use data from reviews of unlocked mobile phones sold on Amazon.com. These data are acquired by the crawlers in December 2016. The data is stored in a csv file including 124151 different reviews. Each review is constituted by the product name, brand name, price, rating, reviews and review notes. The reviews are mainly on electronic devices.</p>
+                    <h2 id="Artificial-Intelligence-Based-Amazon-Consumer-Sentiment-and-Behavior-Analysis"><a href="#Artificial-Intelligence-Based-Amazon-Consumer-Sentiment-and-Behavior-Analysis" class="headerlink" title="Artificial Intelligence Based Amazon Consumer Sentiment and Behavior Analysis"></a><center>Artificial Intelligence Based Amazon Consumer Sentiment and Behavior Analysis</center></h2><h3 id="Chimingyang-Huang"><a href="#Chimingyang-Huang" class="headerlink" title="Chimingyang Huang"></a><center>Chimingyang Huang</center></h3><h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1.Introduction"></a>1.Introduction</h3><p>The goal of this project is to use Artificial Intelligence to analyze the sentiment of Amazon customers by using the comments they write. The project has very high practical value since the sellers can use the result to better understand their products.<br>The method for this project is Machine Learning which is one of the most important sub-areas in Artificial Intelligence. </p>
+<p>Generally speaking, there are two types of Machine Learning: Supervised Learning and Unsupervised Learning. The former means the data is labelled and the latter means the data is not labelled. In this project, we use supervised learning because the rating system of Amazon naturally provides perfect labels. Our research area is NLP (Natural Language Processing) which is aiming to let computer understand or interpret human language. </p>
+<h3 id="2-Dataset"><a href="#2-Dataset" class="headerlink" title="2.Dataset"></a>2.Dataset</h3><p>We use data from reviews of unlocked mobile phones sold on Amazon.com. These data are acquired by the crawlers in December 2016. The data is stored in a csv file including 124151 different reviews. Each review is constituted by the product name, brand name, price, rating, reviews and review notes. The reviews are mainly on phone devices.</p>
 <h3 id="3-Data-Visualization-and-Exploratory-Data-Analysis"><a href="#3-Data-Visualization-and-Exploratory-Data-Analysis" class="headerlink" title="3.Data Visualization and Exploratory Data Analysis"></a>3.Data Visualization and Exploratory Data Analysis</h3><p>First, we do some exploratory data analysis to learn about the data. We use packages such as seaborn, matplotlib and pandas. Data visualization is important because we can use it to explore our data. Though the data itself is abstract, we can easily interpret it by drawing graph to show the certain information we want from the data. By doing data visualization, we can learn our data well excavate the potential of our data. Here are two examples of data visualization: </p>
 <p><img src="/2020/02/25/Project-Summary/1.png" alt="1"></p>
 <h3 id="4-Problem-Formulation"><a href="#4-Problem-Formulation" class="headerlink" title="4.Problem Formulation"></a>4.Problem Formulation</h3><p>There are two kinds of problems in machine learning, regression and classification. Regression problem wants an answer with an exact value. In opposite, our problem is a binary classification problem, which means than the answer is either 0 or 1. Here 0 represents the customer dislikes the goods while 1 represents the customer likes the goods. Our goal is to predict the 0 or 1 from the text of customer’s review as input data. </p>
@@ -132,35 +132,60 @@
 <h3 id="6-Algorithm"><a href="#6-Algorithm" class="headerlink" title="6.Algorithm"></a>6.Algorithm</h3><h4 id="6-1-Logistics-Regression"><a href="#6-1-Logistics-Regression" class="headerlink" title="6.1 Logistics Regression"></a>6.1 Logistics Regression</h4><p>Logistics regression is a linear model for prediction. Function h is the whole process, it represents the probability the result is 1, which means that the review is positive. There are various choices for Function g. We adopt sigmoid function in the experiment. it ranges from 0 to 1. When the result of function g, or function h is bigger than 0.5, we predict that the review is positive. When the value is smaller than 0.5, we predict that the review is negative. The input of sigmoid function is x times transpose of θ. X is the vector composed by the feature of each review. Θ is parameter we are going to learn in gradient descent. </p>
 <center>h_θ (x)=P(y=├ 1┤|x)=g(θ^T x)</center>
 
-<h4 id="6-2-Gradient-Descent"><a href="#6-2-Gradient-Descent" class="headerlink" title="6.2 Gradient Descent"></a>6.2 Gradient Descent</h4><p>To get the value of θ, we use gradient descent method. Since we want to make the prediction as real as possible, we use a cost function J(θ), to represent the difference between the predicted value and true value. Then we keep subtracting a portion of the value of cost function from θ until the cost function is minimized. The portion is hyperparameter, which is set by human. To prevent underfitting and overfitting, we use regularization, which means that we add θ into the cost function to ensure that θ is not too big or too small. </p>
+<h4 id="6-2-Gradient-Descent"><a href="#6-2-Gradient-Descent" class="headerlink" title="6.2 Gradient Descent"></a>6.2 Gradient Descent</h4><p>To get the value of θ, we use gradient descent method which optimizes the cost function J(θ). Gradient descent is an optimization algorithm done by iteratively moving in the direction of the negative of the gradient. </p>
 <h3 id="7-Experiment-Design-and-Results"><a href="#7-Experiment-Design-and-Results" class="headerlink" title="7.Experiment Design and Results"></a>7.Experiment Design and Results</h3><h4 id="7-1-Experimental-Design"><a href="#7-1-Experimental-Design" class="headerlink" title="7.1 Experimental Design"></a>7.1 Experimental Design</h4><p>Dataset is divided into training, validation and test dataset. The three data sets have different functions Models are trained and tuned on training data set. Hyper-parameters are selected using validation dataset. Then, we use tuned models to predict labels on the test dataset. The division of dataset ensures that the model can predict from the new data instead of remembering the data it has seen before. </p>
 <p>We used two methods of feature engineering. One is bag-of-words and another is bag-of-ngrams. Experiment is set up for comparing those different feature engineering methods<br>The metric we are using is F1-Score. F1-Score is the harmonic mean of recall and precision. The values of F1-Score is between 0 and 1. The higher the F1-Score is, the better the model predicts. </p>
 <h4 id="7-2-Result-and-Analysis"><a href="#7-2-Result-and-Analysis" class="headerlink" title="7.2 Result and Analysis"></a>7.2 Result and Analysis</h4><table>
 <thead>
 <tr>
-<th>Feature Engineering Method</th>
-<th>Training F1 Score</th>
-<th>Testing F1 Score</th>
+<th></th>
+<th>F1 Score</th>
+<th>Recall</th>
+<th>Precision</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Bag of Words</td>
-<td>0.927</td>
-<td>0.919</td>
-</tr>
-<tr>
-<td>Bag of Ngrams</td>
-<td>0.932</td>
+<td>Bag-of-words</td>
 <td>0.921</td>
+<td>0.945</td>
+<td>0.899</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<td>Bag-of-ngrams</td>
+<td>0.916</td>
+<td>0.948</td>
+<td>0.887</td>
+</tr>
+<tr>
+<td>Combine</td>
+<td>0.931</td>
+<td>0.945</td>
+<td>0.945</td>
 </tr>
 </tbody></table>
-<p>This table shows the result of experiment. The experiment is successful because F1 score is high. The F1 Score of Bag of Ngrams is higher that of the Bag of Words, which means that Bag of Ngrams is better than the Bag of Words is this experiment since the former considers the order of word. </p>
-<h3 id="8-Conclusion"><a href="#8-Conclusion" class="headerlink" title="8.Conclusion"></a>8.Conclusion</h3><p>In the project Artificial Intelligence Based Amazon Consumer Sentiment and Behavior Analysis, we create a machine learning model and train it by using the data from Amazon. Our result is a model that can pre</p>
+<p>This table shows the test performance of different NLP feature engineering/sentence embedding methods. Combining BoW with BoN has the best performance and significantly increases the precision from 0.89 to 0.94. The word ordering information in BoN does help improve BoW performance. We also use different models with the same combined features, and result is:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>F1 Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Logistic Regression</td>
+<td>0.931</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>0.926</td>
+</tr>
+<tr>
+<td>Neural Network</td>
+<td>0.939</td>
+</tr>
+</tbody></table>
+<p>According to this table, NN-based model has better performance over tree-based model and linear model.</p>
+<h3 id="8-Conclusion"><a href="#8-Conclusion" class="headerlink" title="8.Conclusion"></a>8.Conclusion</h3><p>In the project Artificial Intelligence Based Amazon Customer Sentiment and Behavior Analysis, we create a machine learning system to predict customers’ attitude towards products by analyzing their comments. Our system achieves a very high F1 Score. The best choice of feature is to combine bag-of-words and bag-of-ngrams, and the best model is Neural Network.</p>
 
                     
                     <!-- Tags Bottom -->
